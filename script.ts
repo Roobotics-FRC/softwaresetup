@@ -2,10 +2,6 @@ function $ (selector: string) {
   return document.querySelector(selector) as HTMLElement
 }
 
-window.addEventListener('beforeunload', function () {
-  return 'Are you sure you want to exit?'
-}, false)
-
 const titleEl: HTMLElement = $('#title')
 const contentEl: HTMLElement = $('#content')
 const linkEl: HTMLElement = $('#link')
