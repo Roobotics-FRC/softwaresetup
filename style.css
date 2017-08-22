@@ -1,0 +1,135 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  text-align: center;
+  background-color: rgba(0, 33, 70, 0.25);
+}
+.center-wrap-outer {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.center-wrap-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+.card {
+  background-color: #fff;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  width: 27.5em;
+  height: 32em;
+}
+
+.container {
+    padding: 0.25em 0.75em;
+    height: inherit;
+    overflow: scroll;
+}
+
+body, .button {
+  font-family: "Titillium Web", "Avenir Next", "Avenir", sans-serif !important;
+}
+h1 {
+  font-weight: 200;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.actions {
+  position: relative;
+  bottom: 5em;
+}
+
+code {
+  padding: .2em .4em;
+  color: #bd4147;
+  font-size: 75%;
+  background-color: #f7f7f9;
+  border-radius: .25em;
+  font-family: Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+
+.button img {
+  height: 1.5em;
+  width: 1.5em;
+  vertical-align: -20%;
+}
+
+/*BUTTON*/
+.button {
+  display: inline-block;
+  overflow: hidden;
+  margin: 10px;
+  padding: 12px 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 60ms ease-in-out;
+  transition: all 60ms ease-in-out;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none !important;
+  color: #fff;
+  border: 0 none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.3;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 160px;
+          flex: 0 0 160px;
+  box-shadow: 2px 5px 10px rgba(22, 22, 22, 0.1);
+}
+.button:hover {
+  -webkit-transition: all 60ms ease;
+  transition: all 60ms ease;
+  opacity: .85;
+}
+.button:active {
+  -webkit-transition: all 60ms ease;
+  transition: all 60ms ease;
+  opacity: .75;
+}
+.button:focus {
+  outline: 1px dotted #959595;
+  outline-offset: -4px;
+}
+.button.-dark {
+  color: #FFFFFF;
+  background: #002146;
+}
+.button.-dark:focus {
+  outline: 1px dotted white;
+  outline-offset: -4px;
+}
+.button.-blue {
+  background-position: 0px 0px;
+  background-size: 5px 15px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  color: #FFFFFF;
+  background-color: #61bdea;
+}
+.button.-blue:focus, .button.-blue:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
