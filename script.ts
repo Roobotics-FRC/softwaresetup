@@ -6,11 +6,11 @@ window.addEventListener('beforeunload', function () {
   return 'Are you sure you want to exit?'
 }, false)
 
-const title: HTMLElement = $('#title')
-const content: HTMLElement = $('#content')
-const link: HTMLElement = $('#link')
-const linkButton: HTMLElement = $('#link-button')
-const actions: HTMLElement = $('.actions')
+const titleEl: HTMLElement = $('#title')
+const contentEl: HTMLElement = $('#content')
+const linkEl: HTMLElement = $('#link')
+const linkButtonEl: HTMLElement = $('#link-button')
+const actionsEl: HTMLElement = $('.actions')
 
 document.addEventListener('DOMContentLoaded', function () {
   const isSafari: boolean = navigator.userAgent.indexOf("Safari") > -1
@@ -24,19 +24,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function loadPageWithID (id: string) {
   let page: Page = pages.find(e => e.id === id)
-  title.textContent = page.title
-  content.innerHTML = page.content
+  titleEl.textContent = page.title
+  contentEl.innerHTML = page.content
   if (os === OS.macOS && page.macLink !== undefined) {
-    linkButton.style.display = "block"
-    link.setAttribute('href', page.macLink)
+    linkButtonEl.style.display = "block"
+    linkEl.setAttribute('href', page.macLink)
   } else if (os === OS.Windows && page.winLink !== undefined) {
-    linkButton.style.display = "block"
-    link.setAttribute('href', page.winLink)
+    linkButtonEl.style.display = "block"
+    linkEl.setAttribute('href', page.winLink)
   } else {
-    linkButton.style.display = "none"
+    linkButtonEl.style.display = "none"
   }
-  while (actions.firstChild) {
-    actions.removeChild(actions.firstChild);
+  while (actionsEl.firstChild) {
+    actionsEl.removeChild(actionsEl.firstChild);
   }
   for (const action of page.actions) {
     let button: HTMLElement = document.createElement('button')
@@ -47,6 +47,6 @@ function loadPageWithID (id: string) {
       action.runAction()
       loadPageWithID(action.link)
     })
-    actions.appendChild(button)
+    actionsEl.appendChild(button)
   }
 }
