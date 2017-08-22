@@ -3,9 +3,9 @@ before_install:
 - npm install -g typescript
 script:
 - tsc
-# deploy:
-#   provider: pages
-#   skip_cleanup: true
-#   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-#   on:
-#     branch: master
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master
