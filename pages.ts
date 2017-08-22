@@ -46,7 +46,7 @@ class Page {
   }
 }
 
-let pages: Page[] = [
+const pages: Page[] = [
   Page.quick('start',
     'Welcome to Team 4373\'s software setup guide',
     'This guide will walk you through the process of setting up your computer for writing code for our robot.',
@@ -70,8 +70,8 @@ let pages: Page[] = [
   ),
   new Page('eclipse',
     'Install Eclipse',
-    'If you are not on AFS\'s Wi-Fi, use the link below to download the Eclipse Installer, then run the Installer. You want to install the Eclipse IDE for Java Developers. If you are at AFS or if the Installer is not working, click the "Manual Eclipse Install" button below.',
-    [new Button('Continue', 'wpilib'), new Button('Manual Eclipse Install', 'manual-eclipse')],
+    'If you are not on AFS\'s Wi-Fi, use the link below to download the Eclipse Installer, then run the Installer. You want to install the Eclipse IDE for Java Developers. If you are at AFS or if the Installer is not working, click the "Manual Installation" button below.',
+    [new Button('Continue', 'wpilib'), new Button('Manual Installation', 'manual-eclipse')],
     'https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R/eclipse-inst-mac64.tar.gz&r=1',
     'https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R/eclipse-inst-win64.exe&r=1'
   ),
