@@ -1,11 +1,19 @@
 language: node_js
+node_js:
+  - "7"
 before_install:
-- npm install -g typescript
+  - npm install -g typescript
 script:
-- tsc
+  - tsc
+before_deploy:
+  - rm .gitignore
+  - rm *.ts
+  - rm tsconfig.json
+  - rm .travis.yml
+  - rm README.md
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  github_token: $GITHUB_TOKEN
   on:
     branch: master
