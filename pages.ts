@@ -131,11 +131,8 @@ const pages: Page[] = [
     'You\'re all set up!',
     'You are good to go. Might I suggest taking this opportunity to brush up on your Java skills?'
   ),
-  new Page('no-safari',
+  Page.quick('no-safari',
     'Use a different browser',
-    'Safari can interfere with the installation of JDK, which is the linchpin of the entire setup process. Chrome is the recommended browser for this setup process.'
-      + '<br>If you do proceed, when you reach the JDK installation portion of the setup, you may have to click "Use Once" in order to continue.'
-      + '<br>Are you <em>absolutely</em> sure you want to continue with Safari?',
-    [new Button('Go Ahead Anyway', 'start')]
+    'Safari interferes with the installation of certain vital components. Google Chrome is the recommended browser for this setup process. If you have no choice but to use Safari, contact the Robotics team for help.'
   )
 ]
