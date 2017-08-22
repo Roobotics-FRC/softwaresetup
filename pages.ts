@@ -46,7 +46,7 @@ class Page {
   }
 }
 
-let pages = [
+let pages: Page[] = [
   Page.quick('start',
     'Welcome to Team 4373\'s software setup guide',
     'This guide will walk you through the process of setting up your computer for writing code for our robot.',
