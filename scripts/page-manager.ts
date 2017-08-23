@@ -46,6 +46,8 @@ class PageManager {
       })
       actionsEl.appendChild(button)
     }
+    // TSLint incorrectly thinks that `this.currentPage` is always defined. It's not.
+    // tslint:disable-next-line
     if (saveHistory && this.currentPage !== undefined) {
       this.pageHistory.push(this.currentPage)
     }
