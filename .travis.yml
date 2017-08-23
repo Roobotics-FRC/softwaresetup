@@ -1,8 +1,15 @@
 language: node_js
 node_js:
   - "7"
+cache:
+  directories:
+    - $(npm config get prefix)/bin/typescript
+    - $(npm config get prefix)/bin/tslint
+    - $(npm config get prefix)/bin/tslint-config-standard
 before_install:
-  - npm install -g typescript tslint tslint-config-standard
+  - npm list -g typescript || npm install -g typescript
+  - npm list -g tslint || npm install -g tslint
+  - npm list -g tslint-config-standard || npm install -g tslint-config-standard
 script:
   - tslint --type-check --project .
   - tsc
