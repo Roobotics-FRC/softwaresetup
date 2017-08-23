@@ -2,6 +2,12 @@
   "compilerOptions": {
     "lib": ["es6", "dom"],
     "target": "es5",
-    "outDir": "build"
-  }
+    "outFile": "script.js"
+  },
+  "files": [
+    "scripts/elements.ts",
+    "scripts/pages.ts",
+    "scripts/page-manager.ts",
+    "scripts/script.ts"
+  ]
 }

@@ -1,50 +1,3 @@
-enum OS {
-  macOS, Windows
-}
-
-let os
-
-class Button {
-  title: string
-  link: string
-  actionId?: string
-  constructor (title: string, link: string, actionId?: string) {
-    this.title = title
-    this.link = link
-    this.actionId = actionId
-  }
-  runAction () {
-    switch (this.actionId) {
-      case 'setOS:mac':
-        os = OS.macOS
-        break
-      case 'setOS:windows':
-        os = OS.Windows
-        break
-    }
-  }
-}
-
-class Page {
-  id: string
-  title: string
-  content: string
-  macLink: string
-  winLink: string
-  actions: Button[]
-  constructor (id: string, title: string, content: string, actions: Button[], macLink?: string, winLink?: string) {
-    this.id = id
-    this.title = title
-    this.content = content
-    this.macLink = macLink
-    this.winLink = winLink
-    this.actions = actions
-  }
-  static quick (id: string, title: string, content: string, nextPage?: string) {
-    return new Page(id, title, content, nextPage !== undefined ? [new Button('Continue', nextPage)] : [])
-  }
-}
-
 const pages: Page[] = [
   Page.quick('start',
     'Welcome to Team 4373\'s software setup guide',
@@ -92,7 +45,36 @@ const pages: Page[] = [
       + '<li>Click "Next", accept the license agreement, and click "OK" on the security warning.</li>'
       + '<li>Restart Eclipse when prompted, then close Eclipse once it opens.</li>'
       + '</ul>',
-    'vision-processing'
+    'git-client'
+  ),
+  new Page('git-client',
+    'Install GitHub Desktop',
+    'GitHub Desktop is the recommended Git client for beginning Git users. Please use the link below to download it.'
+      + '<br>However, if you have experience with Git, and would like a Git client that is more fully-featured, check out some alternatives by clicking "View Alternatives" below.',
+    [new Button('Continue', 'vision-processing'), new Button('View Alternatives', 'alternative-git')],
+    'https://central.github.com/deployments/desktop/desktop/latest/darwin',
+    'https://central.github.com/deployments/desktop/desktop/latest/win32'
+  ),
+  new Page('alternative-git',
+    'Alternative Git Clients',
+    'If you have significant experience with Git and would like a client that supports features like stashing, tags, and submodules, the options below are the recommendations of Team 4373.'
+      + '<ul><li><strong>Fork</strong> is a powerful but lightweight Git client for macOS. If you are using a Mac and don\'t want the hassle of SourceTree, this is the way to go.</li>'
+      + '<li><strong>SourceTree</strong> is Atlassian\'s Git client that works on both macOS and Windows. It is powerful, if not particularly friendly to the uninitiated.</li></ul>'
+      + 'Use the buttons below to go to the download pages for each program.',
+      [new Button('Fork (macOS only)', 'git-fork'), new Button('SourceTree', 'git-sourcetree')]
+  ),
+  new Page('git-fork',
+    'Install Fork',
+    'Fork is a macOS-only native Git client. Use the link below to install it.',
+    [new Button('Continue', 'vision-processing')],
+    'https://git-fork.com/update/files/Fork.dmg'
+  ),
+  new Page('git-sourcetree',
+    'Install SourceTree',
+    'SourceTree is an industry-standard, heavy-duty Git client for macOS and Windows. Use the link below to download it.',
+    [new Button('Continue', 'vision-processing')],
+    'https://downloads.atlassian.com/software/sourcetree/SourceTree_2.6.1b.zip?_ga=2.159574132.812906158.1503506139-1162072413.1503506139',
+    'https://downloads.atlassian.com/software/sourcetree/windows/ga/SourceTreeSetup-2.1.10.0.exe?_ga=2.135964664.812906158.1503506139-1162072413.1503506139'
   ),
   new Page('vision-processing',
     'Vision Processing',
