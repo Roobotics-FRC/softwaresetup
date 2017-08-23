@@ -9,7 +9,7 @@ script:
   - tsc
 before_deploy:
   - rm .gitignore
-  - rm *.ts
+  - rm -rf scripts/
   - rm *.json
   - rm .travis.yml
   - rm README.md

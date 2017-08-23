@@ -60,7 +60,9 @@ code {
 .button img {
   height: 1.5em;
   width: 1.5em;
-  vertical-align: -20%;
+  vertical-align: -27.5%;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
 }
 
 /*BUTTON*/
