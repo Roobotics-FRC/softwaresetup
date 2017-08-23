@@ -2,7 +2,7 @@ enum OS {
   macOS, Windows
 }
 
-var os
+let os
 
 class Button {
   title: string
@@ -22,7 +22,7 @@ class Button {
       case 'setOS:windows':
         os = OS.Windows
         break
-      }
+    }
   }
 }
 
@@ -33,7 +33,7 @@ class Page {
   macLink: string
   winLink: string
   actions: Button[]
-  constructor (id: string, title: string, content: string, actions: Button[], macLink?: string, winLink?: string,) {
+  constructor (id: string, title: string, content: string, actions: Button[], macLink?: string, winLink?: string) {
     this.id = id
     this.title = title
     this.content = content
@@ -41,8 +41,8 @@ class Page {
     this.winLink = winLink
     this.actions = actions
   }
-  static quick(id: string, title: string, content: string, nextPage?: string) {
-    return new Page(id, title, content, nextPage !== undefined ? [new Button('Continue', nextPage)] : <Button[]>[])
+  static quick (id: string, title: string, content: string, nextPage?: string) {
+    return new Page(id, title, content, nextPage !== undefined ? [new Button('Continue', nextPage)] : [])
   }
 }
 
@@ -84,7 +84,7 @@ const pages: Page[] = [
   ),
   Page.quick('wpilib',
     'Install the WPILib plugin',
-    'To install the WPILib plugin for Eclipse: <ul>' 
+    'To install the WPILib plugin for Eclipse: <ul>'
       + '<li>Open Eclipse (use the default workspace if prompted).</li>'
       + '<li>Select the Help menu within Eclipse, then choose "Install new software"</li>'
       + '<li>Click "Add" and enter the name <code>WPILib</code> and the location <code>http://first.wpi.edu/FRC/roborio/release/eclipse/</code></li>'

@@ -9,30 +9,30 @@ const linkButtonEl: HTMLElement = $('#link-button')
 const actionsEl: HTMLElement = $('.actions')
 
 document.addEventListener('DOMContentLoaded', function () {
-  const isSafari: boolean = navigator.userAgent.indexOf("Safari") > -1
+  const isSafari: boolean = navigator.userAgent.indexOf('Safari') > -1
   const isChrome: boolean = navigator.userAgent.indexOf('Chrome') > -1
   if (isSafari && !isChrome) {
     loadPageWithID('no-safari')
   } else {
     loadPageWithID('start')
   }
-}, false);
+}, false)
 
 function loadPageWithID (id: string) {
   let page: Page = pages.find(e => e.id === id)
   titleEl.textContent = page.title
   contentEl.innerHTML = page.content
   if (os === OS.macOS && page.macLink !== undefined) {
-    linkButtonEl.style.display = "block"
+    linkButtonEl.style.display = 'block'
     linkEl.setAttribute('href', page.macLink)
   } else if (os === OS.Windows && page.winLink !== undefined) {
-    linkButtonEl.style.display = "block"
+    linkButtonEl.style.display = 'block'
     linkEl.setAttribute('href', page.winLink)
   } else {
-    linkButtonEl.style.display = "none"
+    linkButtonEl.style.display = 'none'
   }
   while (actionsEl.firstChild) {
-    actionsEl.removeChild(actionsEl.firstChild);
+    actionsEl.removeChild(actionsEl.firstChild)
   }
   for (const action of page.actions) {
     let button: HTMLElement = document.createElement('button')
