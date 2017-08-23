@@ -2,6 +2,7 @@
   "compilerOptions": {
     "lib": ["es6", "dom"],
     "target": "es5",
+    "strictNullChecks": true,
     "outFile": "js/script.js"
   },
   "files": [

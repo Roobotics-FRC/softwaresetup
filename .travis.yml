@@ -4,7 +4,7 @@ node_js:
 before_install:
   - npm install -g typescript tslint tslint-config-standard
 script:
-  - tslint --project .
+  - tslint --type-check --project .
   - tsc
 before_deploy:
   - rm -rf .gitignore scripts/ *.json .travis.yml README.md

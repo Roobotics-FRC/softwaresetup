@@ -33,8 +33,8 @@ class Page {
   id: string
   title: string
   content: string
-  macLink: string
-  winLink: string
+  macLink: string | undefined
+  winLink: string | undefined
   actions: Button[]
   constructor (id: string, title: string, content: string, actions: Button[], macLink?: string, winLink?: string) {
     this.id = id

@@ -19,7 +19,8 @@ class PageManager {
   }
 
   loadPageWithID (id: string, saveHistory = true) {
-    let page: Page = pages.find(e => e.id === id)
+    let page: Page | undefined = pages.find(e => e.id === id)
+    if (page === undefined) return
     titleEl.textContent = page.title
     contentEl.innerHTML = page.content
     if (os === OS.macOS && page.macLink !== undefined) {
@@ -57,6 +58,7 @@ class PageManager {
   }
 
   goBack () {
-    if (this.pageHistory.length > 0) this.loadPageWithID(this.pageHistory.pop(), false)
+    let lastPg = this.pageHistory.pop()
+    if (lastPg !== undefined) this.loadPageWithID(lastPg, false)
   }
 }
