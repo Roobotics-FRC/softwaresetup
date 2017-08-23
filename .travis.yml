@@ -3,12 +3,14 @@ node_js:
   - "7"
 before_install:
   - npm install -g typescript
+  - npm install -g tslint tslint-config-standard
 script:
+  - tslint
   - tsc
 before_deploy:
   - rm .gitignore
   - rm *.ts
-  - rm tsconfig.json
+  - rm *.json
   - rm .travis.yml
   - rm README.md
 deploy:
