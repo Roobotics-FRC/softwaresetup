@@ -2,17 +2,12 @@ language: node_js
 node_js:
   - "7"
 before_install:
-  - npm install -g typescript
-  - npm install -g tslint tslint-config-standard
+  - npm install -g typescript tslint tslint-config-standard
 script:
   - tslint --project .
   - tsc
 before_deploy:
-  - rm .gitignore
-  - rm -rf scripts/
-  - rm *.json
-  - rm .travis.yml
-  - rm README.md
+  - rm -rf .gitignore scripts/ *.json .travis.yml README.md
 deploy:
   provider: pages
   skip_cleanup: true
