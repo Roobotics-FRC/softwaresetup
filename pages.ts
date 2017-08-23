@@ -16,7 +16,6 @@ class Button {
   runAction () {
     switch (this.actionId) {
       case 'setOS:mac':
-        console.log('set mac')
         os = OS.macOS
         break
       case 'setOS:windows':
