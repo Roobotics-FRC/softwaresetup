@@ -4,6 +4,7 @@ node_js:
 cache:
   directories:
     - $(npm config get prefix)/bin/typescript
+    - $(npm config get prefix)/bin/tsc
     - $(npm config get prefix)/bin/tslint
     - $(npm config get prefix)/bin/tslint-config-standard
     - $(npm config get prefix)/lib/node_modules
