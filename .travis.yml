@@ -1,16 +1,16 @@
 language: node_js
 node_js:
   - "7"
-cache: # FIXME: Caches do not appear to be working
+cache:
   directories:
     - $(npm config get prefix)/bin/typescript
     - $(npm config get prefix)/bin/tslint
     - $(npm config get prefix)/bin/tslint-config-standard
+    - $(npm config get prefix)/lib/node_modules
 before_install:
   - npm list -g typescript --depth=0 || npm install -g typescript
   - npm list -g tslint --depth=0 || npm install -g tslint
   - npm list -g tslint-config-standard --depth=0 || npm install -g tslint-config-standard
-  - echo $(npm config get prefix) # debug
 script:
   - tslint --type-check --project .
   - tsc
