@@ -1,7 +1,7 @@
 const pages: Page[] = [
   Page.quick('start',
     'Welcome to Team 4373\'s software setup guide',
-    'This guide will walk you through the process of setting up your computer for writing code for our robot.',
+    'This guide will walk you through the process of setting up your computer for software development.',
     'os-select'
   ),
   new Page('os-select',
