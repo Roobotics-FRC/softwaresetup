@@ -29,7 +29,7 @@ const pages: Page[] = [
   ),
   new Page('manual-eclipse',
     'Manual Eclipse Installation',
-    'To install Eclipse manually, download the file below, then move the eclipse folder to /Applications on macOS, or your home folder on Windows.',
+    'To install Eclipse manually, download the file below, then move the extracted file(s) to /Applications on macOS, or your home folder on Windows.',
     [new Button('Continue', 'wpilib')],
     'http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/R/eclipse-java-oxygen-R-macosx-cocoa-x86_64.dmg',
     'http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/R/eclipse-java-oxygen-R-win32-x86_64.zip'
@@ -43,7 +43,7 @@ const pages: Page[] = [
       + '<li>Click "OK"</li>'
       + '<li>Make sure that the only checkbox selected is the one next to "Robot Java Development"&mdash;NOT "Robot C++ Development"</li>'
       + '<li>Click "Next", accept the license agreement, and click "OK" on the security warning.</li>'
-      + '<li>Restart Eclipse when prompted, then close Eclipse once it opens.</li>'
+      + '<li>Restart Eclipse when prompted, then close out of it.</li>'
       + '</ul>',
     'git-client'
   ),
