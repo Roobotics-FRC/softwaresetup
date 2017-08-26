@@ -11,7 +11,7 @@ const pages: Page[] = [
   ),
   Page.quick('unknown-os',
     'Seek Help',
-    'Your OS is not common enough to be included in this guide. Please seek help from the Robotics team in person.'
+    'Your OS is not common enough to be included in this guide. Please seek help from me in person.'
   ),
   new Page('java',
     'Install JDK',
@@ -22,7 +22,7 @@ const pages: Page[] = [
   ),
   new Page('eclipse',
     'Install Eclipse',
-    'If you are not on AFS\'s Wi-Fi, use the link below to download the Eclipse Installer, then run the Installer. You want to install the Eclipse IDE for Java Developers. If you are at AFS or if the Installer is not working, click the "Manual Installation" button below.',
+    'If you are not on AFS\'s Wi-Fi, use the link below to download the Eclipse Installer, then run the Installer. You want to install the <strong>Eclipse IDE for Java Developers</strong>. If you are at AFS or if the Installer is not working, click the "Manual Installation" button below.',
     [new Button('Continue', 'wpilib'), new Button('Manual Installation', 'manual-eclipse')],
     'https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R/eclipse-inst-mac64.tar.gz&r=1',
     'https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R/eclipse-inst-win64.exe&r=1'
@@ -58,7 +58,7 @@ const pages: Page[] = [
     'Vision Processing',
     'If you are interested in working on vision processing, you will need to install OpenCV. If you are not interested in working on VP, skip this step.'
       + '<br>Windows users should follow the link below, click the "Win pack" link for the 3.3.0 version, and extract the downloaded .exe file to the Downloads folder using a program like 7-Zip.'
-      + '<br>Mac users should seek help from the Robotics team to get this set up.',
+      + '<br>Mac users should contact me to get this set up.',
     [new Button('Continue', 'slack')],
     undefined,
     'http://opencv.org/releases.html'
@@ -73,15 +73,15 @@ const pages: Page[] = [
   ),
   new Page('trello',
     'Sign up for Trello',
-    'Please create a Trello account using the link below. Once you have created an account, send the Robotics team your username so you can be added to the Trello team.',
+    'Please create a Trello account using the link below. Once you have created an account, send me your username so you can be added to the Trello team.',
     [new Button('Continue', 'github')],
     'https://trello.com/signup',
     'https://trello.com/signup'
   ),
   new Page('github',
     'Sign up for GitHub',
-    'You will need to create a GitHub account to access our Git repos. Please follow the link below to create one (choose the free plan), then contact the Robotics team for an invite to our organization.'
-      + '<br>If you are interested in receiving the benefits of a GitHub for Education account, contact the Robotics team for more information.',
+    'You will need to create a GitHub account to access our Git repos. Please follow the link below to create one (choose the free plan), then contact me for an invite to our organization.'
+      + '<br>If you are interested in receiving the benefits of a GitHub for Education account, send me an email for more information.',
     [new Button('Continue', 'end')],
     'https://github.com/join',
     'https://github.com/join'
@@ -92,6 +92,6 @@ const pages: Page[] = [
   ),
   Page.quick('no-safari',
     'Use a different browser',
-    'Safari interferes with the installation of certain vital components. Google Chrome is the recommended browser for this setup process. If you have no choice but to use Safari, contact the Robotics team for help.'
+    'Safari interferes with the installation of certain vital components. Google Chrome is the recommended browser for this setup process. If you have no choice but to use Safari, contact me for help.'
   )
 ]
