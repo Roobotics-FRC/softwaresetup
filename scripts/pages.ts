@@ -45,7 +45,18 @@ const pages: Page[] = [
       + '<li>Click "Next", accept the license agreement, and click "OK" on the security warning.</li>'
       + '<li>Restart Eclipse when prompted, then close out of it.</li>'
       + '</ul>',
-    'git-client'
+    'checkstyle'
+  ),
+  new Page('checkstyle',
+    'Install the Checkstyle plugin',
+    'Checkstyle makes sure your code is clean and readable. To install it:<ul>'
+      + '<li>Open Eclipse</li>'
+      + '<li>Drag the "GO TO WEBSITE" button onto the Eclipse icon in your Dock/Task Bar—DO NOT click it.</li>'
+      + '<li>Go through the installation, accept the terms, and click "OK" on any warnings.</li>'
+      + '</ul>',
+    [new Button('Continue', 'git-client')],
+    'http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=150',
+    'http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=150'
   ),
   new Page('git-client',
     'Install GitHub Desktop',
