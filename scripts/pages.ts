@@ -51,7 +51,7 @@ const pages: Page[] = [
     'Install the Checkstyle plugin',
     'Checkstyle makes sure your code is clean and readable. To install it:<ul>'
       + '<li>Open Eclipse</li>'
-      + '<li>Drag the "GO TO WEBSITE" button onto the Eclipse icon in your Dock/Task Bar—DO NOT click it.</li>'
+      + '<li>Drag the "GO TO WEBSITE" button below onto the Eclipse icon in your Dock/Task Bar (not the Eclipse shortcut on your Desktop if you\'re on Windows)—DO NOT click it.</li>'
       + '<li>Go through the installation, accept the terms, and click "OK" on any warnings.</li>'
       + '</ul>',
     [new Button('Continue', 'git-client')],
