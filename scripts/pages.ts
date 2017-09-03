@@ -7,7 +7,7 @@ const pages: Page[] = [
   new Page('os-select',
     'Select your operating system',
     'Please select the OS running on your computer.',
-    [new Button('macOS', 'java', 'setOS:mac'), new Button('Windows', 'java', 'setOS:windows'), new Button('Something else', 'unknown-os')]
+    [new Button('macOS', 'java', 'setOS:mac'), new Button('Windows', 'java', 'setOS:windows'), new Button('Chrome OS', '', 'loadGuide:chrome'), new Button('Other', 'unknown-os')]
   ),
   Page.quick('unknown-os',
     'Seek Help',

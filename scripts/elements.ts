@@ -25,6 +25,8 @@ class Button {
       case 'setOS:windows':
         os = OS.Windows
         break
+      case 'loadGuide:chrome':
+        window.location.href = 'chromebook.html'
     }
   }
 }
