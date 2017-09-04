@@ -2,6 +2,10 @@ enum OS {
   macOS, Windows
 }
 
+enum ButtonAction {
+  SetMac, SetWindows, SetChrome
+}
+
 let os
 
 function $ (selector: string) {
@@ -11,22 +15,23 @@ function $ (selector: string) {
 class Button {
   title: string
   link: string
-  actionId?: string
-  constructor (title: string, link: string, actionId?: string) {
+  actionId?: ButtonAction
+  constructor (title: string, link: string, actionId?: ButtonAction) {
     this.title = title
     this.link = link
     this.actionId = actionId
   }
   runAction () {
     switch (this.actionId) {
-      case 'setOS:mac':
+      case ButtonAction.SetMac:
         os = OS.macOS
         break
-      case 'setOS:windows':
+      case ButtonAction.SetWindows:
         os = OS.Windows
         break
-      case 'loadGuide:chrome':
+      case ButtonAction.SetChrome:
         window.location.href = 'chromebook.html'
+        break
     }
   }
 }
