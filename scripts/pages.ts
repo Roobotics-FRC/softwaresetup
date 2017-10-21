@@ -16,64 +16,41 @@ const pages: Page[] = [
   new Page('java',
     'Install JDK',
     'Install the JDK software from the link below. You will need to click the "Accept License Agreement" button before downloading. If you are on Windows, download the Windows x64 version. If you are on macOS, download the Mac OS X version. Run the installer once it is downloaded. Ensure that you are downloading the Java SE Development Kit, NOT the Demos and Samples.',
-    [new Button('Continue', 'eclipse')],
+    [new Button('Continue', 'intellij')],
     'http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html',
     'http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html'
   ),
-  new Page('eclipse',
-    'Install Eclipse',
-    'If you are not on AFS\'s Wi-Fi, use the link below to download the Eclipse Installer, then run the Installer. You want to install the <strong>Eclipse IDE for Java Developers</strong>. If you are at AFS or if the Installer is not working, click the "Manual Installation" button below.',
-    [new Button('Continue', 'wpilib'), new Button('Manual Installation', 'manual-eclipse')],
-    'https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R/eclipse-inst-mac64.tar.gz&r=1',
-    'https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R/eclipse-inst-win64.exe&r=1'
+  new Page('intellij',
+    'Install IntelliJ',
+    'Please use the link below to download IntelliJ Community Edition, then install the software once the download completes. If you are on Windows, select the checkboxes next to "64-bit launcher" and ".java" when running the installer, and leave all other values as default.',
+    [new Button('Continue', 'checkstyle')],
+    'https://www.jetbrains.com/idea/download/download-thanks.html?platform=mac&code=IIC',
+    'https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&code=IIC'
   ),
-  new Page('manual-eclipse',
-    'Manual Eclipse Installation',
-    'To install Eclipse manually, download the file below, then move the extracted file(s) to /Applications on macOS, or your home folder on Windows.',
-    [new Button('Continue', 'wpilib')],
-    'http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/R/eclipse-java-oxygen-R-macosx-cocoa-x86_64.dmg',
-    'http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/R/eclipse-java-oxygen-R-win32-x86_64.zip'
-  ),
-  Page.quick('wpilib',
-    'Install the WPILib plugin',
-    'To install the WPILib plugin for Eclipse: <ul>'
-      + '<li>Open Eclipse (use the default workspace if prompted).</li>'
-      + '<li>Select the Help menu within Eclipse, then choose "Install new software"</li>'
-      + '<li>Click "Add" and enter the name <code>WPILib</code> and the location <code>http://first.wpi.edu/FRC/roborio/release/eclipse/</code></li>'
-      + '<li>Click "OK"</li>'
-      + '<li>Make sure that the only checkbox selected is the one next to "Robot Java Development"&mdash;NOT "Robot C++ Development"</li>'
-      + '<li>Click "Next", accept the license agreement, and click "OK" on the security warning.</li>'
-      + '<li>Restart Eclipse when prompted, then close out of it.</li>'
-      + '</ul>',
-    'checkstyle'
-  ),
-  new Page('checkstyle',
-    'Install the Checkstyle plugin',
-    'Checkstyle makes sure your code is clean and readable. To install it:<ul>'
-      + '<li>Open Eclipse</li>'
-      + '<li>Click the "Help" menu, then click "Eclipse Marketplace"</li>'
-      + '<li>Drag the "GO TO WEBSITE" button below onto the Eclipse Marketplace window—DO NOT click it.</li>'
-      + '<li>Go through the installation, accept the terms, and click "OK" on any warnings.</li>'
-      + '</ul>',
+  Page.quick('checkstyle',
+  'Install the Checkstyle plugin',
+  'Checkstyle makes sure your code is clean and readable. To install it:<ul>'
+    + '<li>Open IntelliJ</li>'
+    + '<li>Click the "Configure" button at the bottom right, then select "Plugins" from the list</li>'
+    + '<li>Click the "Browse Repositories..." button at the bottom of the window that opens</li>'
+    + '<li>Use the search box to search for "CheckStyle-IDEA" and install the plugin that comes up by clicking the green Install button</li>'
+    + '<li>Quit IntelliJ</li>'
+    + '</ul>',
+  'wpilib'
+),
+  new Page('wpilib',
+    'Install the WPILib plugins',
+    'Please download the ZIP file and extract it to your home directory (/Users/[your-username] on macOS and C:\\Users\\[your-username] on Windows).',
     [new Button('Continue', 'git-client')],
-    'http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=150',
-    'http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=150'
+    '/wpilib.zip',
+    '/wpilib.zip'
   ),
   new Page('git-client',
     'Install GitHub Desktop',
     'GitHub Desktop is the recommended Git client for beginning Git users. Please use the link below to download it.',
-    [new Button('Continue', 'vision-processing')],
+    [new Button('Continue', 'slack')],
     'https://central.github.com/deployments/desktop/desktop/latest/darwin',
     'https://central.github.com/deployments/desktop/desktop/latest/win32'
-  ),
-  new Page('vision-processing',
-    'Vision Processing',
-    'If you are interested in working on vision processing, you will need to install OpenCV. If you are not interested in working on VP, skip this step.'
-      + '<br>Windows users should follow the link below, click the "Win pack" link for the 3.3.0 version, and extract the downloaded .exe file to the Downloads folder using a program like 7-Zip.'
-      + '<br>Mac users should contact me to get this set up.',
-    [new Button('Continue', 'slack')],
-    undefined,
-    'http://opencv.org/releases.html'
   ),
   new Page('slack',
     'Sign up for Slack',
@@ -92,15 +69,14 @@ const pages: Page[] = [
   ),
   new Page('github',
     'Sign up for GitHub',
-    'You will need to create a GitHub account to access our Git repos. Please follow the link below to create one (choose the free plan), then contact me for an invite to our organization.'
-      + '<br>If you are interested in receiving the benefits of a GitHub for Education account, send me an email for more information.',
+    'You will need to create a GitHub account to access our Git repos. Please follow the link below to create one (choose the free plan), then contact me for an invite to our organization.',
     [new Button('Continue', 'end')],
     'https://github.com/join',
     'https://github.com/join'
   ),
   Page.quick('end',
-    'You\'re all set up!',
-    'You are good to go. Might I suggest taking this opportunity to brush up on your Java skills?'
+    'Setup complete!',
+    'You are good to go for now. We will continue setting up IntelliJ during our meetings.'
   ),
   Page.quick('no-safari',
     'Use a different browser',
