@@ -9,9 +9,9 @@ cache:
     - $(npm config get prefix)/bin/tslint-config-standard
     - $(npm config get prefix)/lib/node_modules
 before_install:
-  - npm list -g typescript --depth=0 || npm install -g typescript
-  - npm list -g tslint --depth=0 || npm install -g tslint
-  - npm list -g tslint-config-standard --depth=0 || npm install -g tslint-config-standard
+  - npm list -g typescript@2.5.3 --depth=0 || npm install -g typescript@2.5.3
+  - npm list -g tslint@5.8.0 --depth=0 || npm install -g tslint@5.8.0
+  - npm list -g tslint-config-standard@6.0.1 --depth=0 || npm install -g tslint-config-standard@6.0.1
 script:
   - tslint --type-check --project .
   - tsc
