@@ -21,5 +21,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
+  name: team4373
+  email: 26205932+team4373@users.noreply.github.com
   on:
     branch: master
