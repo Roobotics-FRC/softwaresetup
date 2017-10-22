@@ -42,8 +42,8 @@ const pages: Page[] = [
     'Install the WPILib plugins',
     'Please download the ZIP file and extract it to your home directory (/Users/[your-username] on macOS and C:\\Users\\[your-username] on Windows).',
     [new Button('Continue', 'git-client')],
-    '/wpilib.zip',
-    '/wpilib.zip'
+    '/softwaresetup/wpilib.zip',
+    '/softwaresetup/wpilib.zip'
   ),
   new Page('git-client',
     'Install GitHub Desktop',
