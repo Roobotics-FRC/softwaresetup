@@ -15,10 +15,10 @@ const pages: Page[] = [
   ),
   new Page('java',
     'Install JDK',
-    'Install the JDK software from the link below. You will need to click the "Accept License Agreement" button before downloading. If you are on Windows, download the Windows x64 version. If you are on macOS, download the Mac OS X version. Run the installer once it is downloaded. Ensure that you are downloading the Java SE Development Kit, NOT the Demos and Samples.',
+    'Install JDK 11 using the link below. You will need to click the "Accept License Agreement" button before downloading. If you are on Windows, download the first Windows version (the exe installer). If you are on macOS, download the first macOS version (the zip file). Run the installer once it is downloaded.',
     [new Button('Continue', 'intellij')],
-    'http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html',
-    'http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html'
+    'https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html',
+    'https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html'
   ),
   new Page('intellij',
     'Install IntelliJ',
@@ -36,14 +36,7 @@ const pages: Page[] = [
     + '<li>Use the search box to search for "CheckStyle-IDEA" and install the plugin that comes up by clicking the green Install button</li>'
     + '<li>Quit IntelliJ</li>'
     + '</ul>',
-  'wpilib'
-),
-  new Page('wpilib',
-    'Install the WPILib plugins',
-    'Please download the ZIP file and extract it to your home directory (/Users/[your-username] on macOS and C:\\Users\\[your-username] on Windows).',
-    [new Button('Continue', 'git-client')],
-    '/softwaresetup/wpilib.zip',
-    '/softwaresetup/wpilib.zip'
+  'git-client'
   ),
   new Page('git-client',
     'Install GitHub Desktop',
@@ -80,6 +73,6 @@ const pages: Page[] = [
   ),
   Page.quick('no-safari',
     'Use a different browser',
-    'Safari interferes with the installation of certain vital components. Google Chrome is the recommended browser for this setup process. If you have no choice but to use Safari, contact me for help.'
+    'Safari interferes with the installation of certain vital components. Google Chrome is the recommended browser for this setup process. If you have no choice but to use Safari, seek help from an experienced software team member.'
   )
 ]
